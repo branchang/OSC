@@ -5,4 +5,3 @@ while True:
         break
     print "you input is",s
 print "done svn "
-ii
