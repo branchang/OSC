@@ -106,6 +106,5 @@ int darray_delete(DArray* thiz, size_t index)
 
 DArray* darray_create(DataDestroyFunc data_destroy, void* ctx)
 {
-
-
+    return NULL;
 }
