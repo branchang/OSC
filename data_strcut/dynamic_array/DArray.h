@@ -30,8 +30,10 @@ int darray_set_by_index(DArray* thiz, size_t index, void* data);
 size_t darray_length(DArray* thiz);
 int darray_find(DArray* thiz, DataComparaFunc cmp_func, void* data);
 int darray_foreach(DArray* thiz, DataVisitFunc visit_func);
-
 void darray_destroy(DArray* thiz);
+
+typedef int DataVisitFunc(void* data); 
+typedef int DataComparaFunc(void* data, void* data); 
 
 struct _DArray{
     void** data; 

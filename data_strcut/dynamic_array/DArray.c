@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #define MIN_PRE_ALLOCATE_NR 10
 /*数组空间扩展，一次扩展多个元素，扩展为现有元素个数的1.5倍*/
@@ -76,7 +77,7 @@ static int darry_shrink(DArray* thiz)
     {
         //调整空间大小
         alloc_size = thiz->size + thiz->size>>1;
-        void *data = realloc(thiz->data, sizeof(void *)*alloc_size);
+        void **data = (void **)realloc(thiz->data, sizeof(void *)*alloc_size);
         if(data)
         {
             thiz->data = data;
@@ -155,4 +156,67 @@ size_t darray_length(DArray* thiz)
 {
     assert(thiz!=NULL);
     return thiz->size;
+}
+
+int darray_get_by_index(DArray* thiz, size_t index, void** data)
+{
+    assert(thiz != NULL);
+    if(index > thiz->size)  
+        return -1;
+
+    data = thiz->data[index];
+    return 0;
+}
+
+int darray_set_by_index(DArray* thiz, size_t index, void* data)
+{
+    assert(thiz!=NULL);
+    
+    //如果大小超过数组只使用最后一个
+    if(index > thiz->size && darray_expand(thiz,1))
+    {
+        thiz->data[thiz->size] = data;
+        thiz->size++;
+    }else {
+        thiz->data[index] = data;
+    }
+
+    return 0;
+}
+
+int darray_find(DArray* thiz, DataComparaFunc cmp_func, void* data)
+{
+    assert(thiz != NULL);
+    int index = 0;
+    for(index; index < thiz->size; index++)
+    {
+        if(cmp_func(thiz->data[index], data) == 0)
+        {
+            return index;
+        }
+    }
+
+    return -1;
+}
+
+int darray_foreach(DArray* thiz, DataVisitFunc visit_func)
+{
+    assert(thiz!=NULL);
+    int index = 0;
+    for(index; index < thiz->size; index++ )
+    {
+        visit_func(thiz->data[index]);
+    }
+    return 0;
+}
+
+void darray_destroy(DArray* thiz)
+{
+    assert(thiz != NULL);
+
+    free(thiz->data);
+
+    thiz->data = NULL;
+    thiz->size = 0;
+    thiz->alloc_size = 0;
 }
