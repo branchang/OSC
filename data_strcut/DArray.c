@@ -104,8 +104,55 @@ int darray_delete(DArray* thiz, size_t index)
     return 0;
 }
 
+//TODO data_destroy作用
 DArray* darray_create(DataDestroyFunc data_destroy, void* ctx)
 {
+    DArray* darray = NULL;
+    darray = (DArray *)malloc(sizeof(DArray)); 
+    if(darray)
+    {
+        memset(darray, 0, sizeof(DArray));
+        darray->size = 1;
+        darray->alloc_size = 1;
+        darray->data[0] = ctx;
+        return darray;
+    }
     return NULL;
+}
 
+int darray_append(DArray* thiz, void* data)
+{
+    assert(thiz!=NULL);
+    if(darray_expand(thiz,1) != 0)
+    {
+        return -1;
+    }
+
+    thiz->data[thiz->size] = data;
+    thiz->size++;
+    return 0;
+}
+
+int darray_prepend(DArray* thiz, void* data)
+{
+    assert(thiz != NULL);
+    if(darray_expand(thiz,1) != 0)
+    {
+        return -1;
+    }
+
+    int index;
+    for(index = thiz->size; index>0; index--)
+    {
+        thiz->data[index] = thiz->data[index-1]
+    }
+    thiz->data[0] = data;
+    thiz->size++;
+    return 0;
+}
+
+size_t darray_length(DArray* thiz)
+{
+    assert(thiz!=NULL);
+    return thiz->size;
 }

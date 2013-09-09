@@ -34,7 +34,7 @@ int darray_foreach(DArray* thiz, DataVisitFunc visit_func);
 void darray_destroy(DArray* thiz);
 
 struct _DArray{
-    void* 
-    int index;
-    int length;
+    void** data; 
+    int size;
+    int alloc_size;
 };
