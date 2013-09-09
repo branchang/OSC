@@ -16,11 +16,7 @@
  * =====================================================================================
  */
 
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
+#include "DArray.h"
 
 #define MIN_PRE_ALLOCATE_NR 10
 /*数组空间扩展，一次扩展多个元素，扩展为现有元素个数的1.5倍*/
@@ -59,7 +55,7 @@ int darray_insert(DArray* thiz, void* new_data,size_t index)
     {
         thiz[i] = thiz[i-1];
     }
-    thiz->data[cursor] = data;
+    thiz->data[cursor] = new_data;
     //修改状态标记位
     thiz->size++;
 
@@ -110,12 +106,16 @@ DArray* darray_create(DataDestroyFunc data_destroy, void* ctx)
 {
     DArray* darray = NULL;
     darray = (DArray *)malloc(sizeof(DArray)); 
-    if(darray)
+    memset(darray, 0, sizeof(DArray));
+    if(darray && darray_expand(darray, 1));
     {
-        memset(darray, 0, sizeof(DArray));
+        printf("%d\n",__LINE__);
         darray->size = 1;
+        printf("%d\n",__LINE__);
         darray->alloc_size = 1;
+        printf("%d\n",__LINE__);
         darray->data[0] = ctx;
+        printf("%d\n",__LINE__);
         return darray;
     }
     return NULL;
@@ -145,7 +145,7 @@ int darray_prepend(DArray* thiz, void* data)
     int index;
     for(index = thiz->size; index>0; index--)
     {
-        thiz->data[index] = thiz->data[index-1]
+        thiz->data[index] = thiz->data[index-1];
     }
     thiz->data[0] = data;
     thiz->size++;
