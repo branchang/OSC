@@ -45,7 +45,50 @@ int main(int argc, void* argv)
     strncpy(pdata->address, "HaiDian,BEIJING,CHINA",strlen("HaiDian,BEIJING,CHINA"));
     DArray* parray = darray_create(data_destroy, (void *)pdata);
 
+    int i;
+    for(i=0; i<10;i++)
+    {
+        pdata = (person_data *)malloc(sizeof(person_data));
+        memset(pdata, 0, sizeof(person_data));
+        sprintf(pdata->name, "Bran[%d]", i);
+        pdata->age = (i+1)*8;
+        sprintf(pdata->address, "street NO.%d HaiDian,BEIJING,CHINA",i+1);
+        darray_append(parray, (void *)pdata);
+        pdata = NULL;
+    }
+
+    darray_foreach(parray, printf_data);
+    darray_delete(parray, darray_length(parray));
+    printf("\n");
     darray_foreach(parray, printf_data);
 
+    void *ppdata = NULL;
+    printf("%x %x\n", &ppdata, ppdata);
+    darray_get_by_index(parray, 10, &ppdata);
+    printf("\n");
+    printf_data(ppdata);
+
+
+
+    printf("\n");
+    pdata = (person_data *)malloc(sizeof(person_data));
+    memset(pdata, 0, sizeof(person_data));
+    strncpy(pdata->name, "Orange", strlen("Orange"));
+    pdata->age = 44;
+    strncpy(pdata->address, "HaiDian,BEIJING,CHINA",strlen("HaiDian,BEIJING,CHINA"));
+    printf("%x\n",pdata);
+    darray_set_by_index(parray, 7, pdata);
+    darray_foreach(parray, printf_data);
+
+
+
+    /*
+    printf("\n");
+    //darray_find(parray, DataComparaFunc cmp_func, void* data);
+    printf("\n");
+    darray_prepend(parray, pdata);
+    printf("\n");
+    darray_destroy(parray);
+    */
     return 0;
 }
