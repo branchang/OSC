@@ -45,4 +45,5 @@ struct _DArray{
     void** data; 
     int size;
     int alloc_size;
+    DataDestroyFunc destroy_data ;
 };

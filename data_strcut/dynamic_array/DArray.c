@@ -112,6 +112,7 @@ DArray* darray_create(DataDestroyFunc data_destroy, void* ctx)
         darray->size = 1;
         darray->alloc_size = 1;
         darray->data[0] = ctx;
+        darray->destroy_data =  data_destroy;
         return darray;
     }
     return NULL;
@@ -192,11 +193,11 @@ int darray_find(DArray* thiz, DataComparaFunc cmp_func, void* data)
     {
         if(cmp_func(thiz->data[index], data) == 0)
         {
-            return index;
+            return index+1;
         }
     }
 
-    return -1;
+    return 0;
 }
 
 int darray_foreach(DArray* thiz, DataVisitFunc visit_func)
@@ -213,9 +214,15 @@ int darray_foreach(DArray* thiz, DataVisitFunc visit_func)
 void darray_destroy(DArray* thiz)
 {
     assert(thiz != NULL);
+    int index = 0;
+
+    for(index; index < thiz->size && thiz->data[index]; index++)
+    {
+        thiz->destroy_data(thiz->data[index]);
+        thiz->data[index] = NULL;
+    }
 
     free(thiz->data);
-
     thiz->data = NULL;
     thiz->size = 0;
     thiz->alloc_size = 0;

@@ -36,6 +36,11 @@ int printf_data(void* in_data)
     return 0;
 }
 
+int cmp_func(void* para1, void* para2)
+{
+    return strcmp(((person_data *)para1)->name, ((person_data *)para2)->name);
+}
+
 int main(int argc, void* argv)
 {
     person_data* pdata = NULL;
@@ -80,15 +85,15 @@ int main(int argc, void* argv)
     darray_set_by_index(parray, 7, pdata);
     darray_foreach(parray, printf_data);
 
-
-
-    /*
     printf("\n");
-    //darray_find(parray, DataComparaFunc cmp_func, void* data);
-    printf("\n");
+    printf("find %d \n", darray_find(parray, cmp_func, pdata));
+
+    strncpy(pdata->name, "first Orange", strlen("first Orange"));
     darray_prepend(parray, pdata);
+    darray_foreach(parray, printf_data);
     printf("\n");
+
     darray_destroy(parray);
-    */
+
     return 0;
 }
