@@ -2,8 +2,8 @@
 class Tree
     attr_accessor :children, :node_name
     def initialize(name, children=[])
-        @children = children
         @node_name = name
+        @children = children
     end
 
     def visit_all(&block)
