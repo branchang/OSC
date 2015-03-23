@@ -15,4 +15,6 @@ language
 tool
 编码中完成的一些小工具.
 
+test for os x
+
 
