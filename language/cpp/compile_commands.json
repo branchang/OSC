@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/main.cpp.o -c /Users/Bran/Code/language/cpp/main.cpp",
+  "file": "/Users/Bran/Code/language/cpp/main.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/generic_proc.cpp.o -c /Users/Bran/Code/language/cpp/generic_proc.cpp",
+  "file": "/Users/Bran/Code/language/cpp/generic_proc.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/containers.cpp.o -c /Users/Bran/Code/language/cpp/containers.cpp",
+  "file": "/Users/Bran/Code/language/cpp/containers.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/tpoco/TestPoco.cpp.o -c /Users/Bran/Code/language/cpp/tpoco/TestPoco.cpp",
+  "file": "/Users/Bran/Code/language/cpp/tpoco/TestPoco.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/algo.cpp.o -c /Users/Bran/Code/language/cpp/algo.cpp",
+  "file": "/Users/Bran/Code/language/cpp/algo.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/stack.cpp.o -c /Users/Bran/Code/language/cpp/stack.cpp",
+  "file": "/Users/Bran/Code/language/cpp/stack.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/basic.cpp.o -c /Users/Bran/Code/language/cpp/basic.cpp",
+  "file": "/Users/Bran/Code/language/cpp/basic.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/sequence.cpp.o -c /Users/Bran/Code/language/cpp/sequence.cpp",
+  "file": "/Users/Bran/Code/language/cpp/sequence.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/interview.cpp.o -c /Users/Bran/Code/language/cpp/interview.cpp",
+  "file": "/Users/Bran/Code/language/cpp/interview.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/utilities/BinaryTree.cpp.o -c /Users/Bran/Code/language/cpp/utilities/BinaryTree.cpp",
+  "file": "/Users/Bran/Code/language/cpp/utilities/BinaryTree.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/design_patterns/w_bridge.cpp.o -c /Users/Bran/Code/language/cpp/design_patterns/w_bridge.cpp",
+  "file": "/Users/Bran/Code/language/cpp/design_patterns/w_bridge.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/book/cpprimer.cpp.o -c /Users/Bran/Code/language/cpp/book/cpprimer.cpp",
+  "file": "/Users/Bran/Code/language/cpp/book/cpprimer.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/book/primer_const.cpp.o -c /Users/Bran/Code/language/cpp/book/primer_const.cpp",
+  "file": "/Users/Bran/Code/language/cpp/book/primer_const.cpp"
+}
+]

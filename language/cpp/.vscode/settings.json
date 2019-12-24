@@ -1,0 +1,96 @@
+{
+    "C_Cpp.configurationWarnings": "Disabled",
+    "C_Cpp.clang_format_sortIncludes": true, // 格式化时调整include的顺序（按字母排序）
+    "C_Cpp.errorSquiggles": "Disabled", // 因为有clang的lint，所以关掉；如果你看的是别的答主用的不是vscode-clangd，就不要加这个了
+    "C_Cpp.autocomplete": "Disabled", // 同上；这几条也可以考虑放到全局里，否则很多错误会报两遍，cpptools一遍clangd一遍
+    "C_Cpp.formatting": "Disabled",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.suggestSnippets": false, // 同上
+    "restructuredtext.confPath": "",
+    "files.associations": {
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "random": "cpp",
+        "exception": "cpp",
+        "__bit_reference": "cpp",
+        "__config": "cpp",
+        "__debug": "cpp",
+        "__functional_base": "cpp",
+        "__locale": "cpp",
+        "__mutex_base": "cpp",
+        "__nullptr": "cpp",
+        "__split_buffer": "cpp",
+        "__string": "cpp",
+        "__threading_support": "cpp",
+        "__tree": "cpp",
+        "__tuple": "cpp",
+        "algorithm": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "cctype": "cpp",
+        "chrono": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "istream": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "list": "cpp",
+        "locale": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "numeric": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "set": "cpp",
+        "sstream": "cpp",
+        "stack": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp",
+        "__errc": "cpp",
+        "__node_handle": "cpp",
+        "optional": "cpp",
+        "filesystem": "cpp"
+    },
+    // "editor.cursorSmoothCaretAnimation": true, // 移动光标时变得平滑
+    // "editor.smoothScrolling": true, // 滚动平滑，不过效果很微弱
+    "files.trimTrailingWhitespace": true, // 保存时，删除每一行末尾的空格
+    "files.insertFinalNewline": true, // 保存后文件最末尾加一整行空行，Linux下的习惯
+    // 开启更加详细的补全结果
+    "ccls.completion.detailedLabel": true,
+    "ccls.misc.compilationDatabaseDirectory": "build",
+    "ccls.clang.extraArgs": [
+        "-isystem",
+        "/Library/Developer/CommandLineTools/usr/include/c++/v1",
+    ],
+    "ccls.clang.resourceDir": "/usr/local/Cellar/llvm/9.0.0/lib/clang/9.0.0",
+    "ccls.launch.args": [
+        // 添加log文件的输出
+        "-log-file=/tmp/ccls_realx.log",
+        // 关闭ccls的代码折叠，ccls的代码折叠不如原生的好用
+        "--init={\"capabilities\": {\"foldingRangeProvider\": false}}",
+    ],
+
+}
