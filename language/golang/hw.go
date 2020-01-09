@@ -188,6 +188,120 @@ func t_Area() {
 	fmt.Println("gg:", gg)
 }
 
+func t_array() {
+	var a1 [10]int
+	a1[0] = 1
+	var a2 = [2]int{2, 3}
+	fmt.Println("a2[1]:", a2[1])
+	var balance = [5]float32{500.0, 2.0, 30.0, 3.293, 4.98}
+	var balance2 = [...]float32{500.0, 2.0, 30.0, 3.293, 4.98}
+	fmt.Println("blance[3]:", balance[3], "balance2[4]:", balance2[4])
+
+}
+
+// 多维数组
+func t_mult_array() {
+	var a1 [2][3]int
+	a1[1][1] = 1
+	// 初始化二维数组
+	var a2 = [3][4]int{
+		{0, 1, 2, 3},
+		{4, 5, 6, 7},
+		{8, 9, 19, 11},
+	}
+	a3 := a2[1][3]
+	fmt.Println("a3:", a3)
+}
+
+func getAverage(arr [5]int, size int) float32 {
+	var i int
+	var avg, sum float32
+	for i = 0; i < size; i++ {
+		sum += float32(arr[i])
+	}
+	avg = sum / float32(size)
+	return avg
+}
+
+func t_getaverage() {
+	/* 数组长度为 5 */
+	var balance = [5]int{1000, 2, 3, 17, 50}
+	var avg float32
+
+	/* 数组作为参数传递给函数 */
+	avg = getAverage(balance, 5)
+
+	/* 输出返回的平均值 */
+	fmt.Printf("平均值为: %f ", avg)
+}
+
+func t_pointer() {
+	var a int = 10
+	fmt.Println("a address is %x", &a)
+}
+
+const MAX int = 3
+
+// 指针数组
+func t_point_array() {
+	a := []int{10, 100, 200}
+	var i int
+	var ptr [MAX]*int
+	for i = 0; i < MAX; i++ {
+		fmt.Println("a[", i, "]:", a[i])
+		ptr[i] = &a[i]
+	}
+	for i = 0; i < MAX; i++ {
+		fmt.Println("Point:", ptr[i], "->", *ptr[i])
+	}
+	for i, x := range ptr {
+		fmt.Println("I:", i, "X:", x, "x:", *x)
+	}
+}
+
+// 指向指针的指针
+func t_p_to_p() {
+	var a int
+	var ptr *int
+	var pptr **int
+	ptr = &a
+	pptr = &ptr
+	a = 938
+	fmt.Println(a, *ptr, **pptr)
+	var x int = 5
+	var y int = 10
+	t_point_swap(&x, &y)
+	fmt.Println("x:", x, "y:", y)
+}
+
+func t_point_swap(x *int, y *int) {
+
+	var temp int
+	temp = *x
+	*x = *y
+	*y = temp
+}
+
+type Books struct {
+	title   string
+	author  string
+	subject string
+	book_id int
+}
+
+func t_struct() {
+	s1 := Books{"GO lang", "www.runoob.com", "jiaocheng ", 8383883}
+	s2 := Books{title: "Go 语言", author: "www.runoob.com", subject: "Go 语言教程", book_id: 6495407}
+	s2.title = "java"
+	s3 := Books{title: "Go 语言", author: "www.runoob.com"}
+	s3.title = "python"
+
+	fmt.Println(s1)
+	fmt.Println(s2)
+	fmt.Println(s3)
+
+}
+
 func main() {
 
 	fmt.Println("hello world")
@@ -214,4 +328,10 @@ func main() {
 	t_bibao()
 	t_Area()
 	fmt.Println("gg:", gg)
+	t_array()
+	t_getaverage()
+	t_pointer()
+	t_point_array()
+	t_p_to_p()
+	t_struct()
 }
