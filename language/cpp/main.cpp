@@ -15,6 +15,7 @@
 #include "design_patterns/w_bridge.hpp"
 #include "book/test_co.hpp"
 #include "book/cpprimer.h"
+#include "book/cpprimer_exercise.h"
 
 int wfile(){
     ofstream outfile("seq_data.txt", ios_base::app);
@@ -419,7 +420,9 @@ int main() {
     // test_virtual_func();
     // destructor_virtual_test();
     // test_const_var();
-    cpp_primer_test();
+    // cpp_primer_test();
+    cpperimer_exer();
+
     return 0;
 
 }

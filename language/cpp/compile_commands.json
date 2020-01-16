@@ -63,5 +63,10 @@
   "directory": "/Users/Bran/Code/language/cpp/build",
   "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/book/primer_const.cpp.o -c /Users/Bran/Code/language/cpp/book/primer_const.cpp",
   "file": "/Users/Bran/Code/language/cpp/book/primer_const.cpp"
+},
+{
+  "directory": "/Users/Bran/Code/language/cpp/build",
+  "command": "/usr/bin/clang++   -I/Users/Bran/Code/language/cpp/../include -I/Users/Bran/Code/language/cpp/../design_patterns  -g -mmacosx-version-min=10.14   -std=gnu++11 -o CMakeFiles/hello.dir/book/cpprimer_exercise.cpp.o -c /Users/Bran/Code/language/cpp/book/cpprimer_exercise.cpp",
+  "file": "/Users/Bran/Code/language/cpp/book/cpprimer_exercise.cpp"
 }
 ]

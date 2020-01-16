@@ -15,7 +15,9 @@ SET(LIB_LIST PocoFoundation PocoUtil PocoData PocoJSON PocoNet pthread ssl crypt
 SET(SRC_LIST main.cpp generic_proc.cpp containers.cpp tpoco/TestPoco.cpp algo.cpp stack.cpp basic.cpp sequence.cpp
     interview.cpp utilities/BinaryTree.cpp design_patterns/w_bridge.cpp
     # book/test_co.cpp
-    book/cpprimer.cpp book/primer_const.cpp)
+    book/cpprimer.cpp book/primer_const.cpp
+    book/cpprimer_exercise.cpp
+    )
 # SET(SRC_LIST poco_test.cpp tpoco/TestPoco.cpp)
 # SET(SRC_LIST tpoco/net.cpp tpoco/TestPoco.cpp)
 # SET(SRC_LIST design_patterns/w_bridge.cpp)
