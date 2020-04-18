@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-# project(hello)
+project(hello)
 
 SET(CMAKE_C_COMPILER "/usr/local/bin/gcc")
 
@@ -17,12 +17,14 @@ SET(SRC_LIST main.cpp generic_proc.cpp containers.cpp tpoco/TestPoco.cpp algo.cp
     # book/test_co.cpp
     book/cpprimer.cpp book/primer_const.cpp
     book/cpprimer_exercise.cpp
+    book/cpprimer_container.cpp
     )
 # SET(SRC_LIST poco_test.cpp tpoco/TestPoco.cpp)
 # SET(SRC_LIST tpoco/net.cpp tpoco/TestPoco.cpp)
 # SET(SRC_LIST design_patterns/w_bridge.cpp)
 
-INCLUDE_DIRECTORIES(../include/ ../design_patterns)
+INCLUDE_DIRECTORIES(../include/ ../design_patterns /usr/local/include/)
+LINK_DIRECTORIES(/usr/local/lib/ )
 ADD_EXECUTABLE(hello ${SRC_LIST})
 TARGET_LINK_LIBRARIES(hello ${LIB_LIST})
 

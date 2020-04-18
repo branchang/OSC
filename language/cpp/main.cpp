@@ -1,35 +1,38 @@
+#include "NumSeq.h"
+#include "algo.h"
+#include "algorithm_t/csort.h"
+#include "basic.h"
+#include "book/cpprimer.h"
+#include "book/cpprimer_container.h"
+#include "book/cpprimer_exercise.h"
+#include "book/test_co.hpp"
+#include "containers.h"
+#include "design_patterns/w_bridge.hpp"
+#include "generic_proc.h"
+#include "interview.h"
+#include "sequence.h"
+#include "stack.h"
+#include "tpoco/TestPoco.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
-#include "NumSeq.h"
-#include "generic_proc.h"
-#include "containers.h"
-#include "algo.h"
-#include "tpoco/TestPoco.h"
-#include "stack.h"
-#include "sequence.h"
-#include "basic.h"
-#include "interview.h"
-#include "algorithm_t/csort.h"
-#include "design_patterns/w_bridge.hpp"
-#include "book/test_co.hpp"
-#include "book/cpprimer.h"
-#include "book/cpprimer_exercise.h"
 
-int wfile(){
+int wfile()
+{
     ofstream outfile("seq_data.txt", ios_base::app);
-    if (!outfile){
+    if (!outfile) {
         cerr << "Oops! unable to save session data1\n";
-    }else {
+    } else {
         outfile << "zhangran" << ' '
-                << "3" <<' '
-                << "3" <<endl;
+                << "3" << ' '
+                << "3" << endl;
     }
     return 0;
 }
 
-int rfile(){
+int rfile()
+{
     string usr_name;
     int num_tries = 0;
     int num_cor = 0;
@@ -37,29 +40,29 @@ int rfile(){
     cin >> usr_name;
     string ss = "this is string.";
 
-
     ifstream infile("seq_data.txt");
-    if (! infile) {
+    if (!infile) {
         cerr << "read file error !!";
-    }else{
-        string name ;
+    } else {
+        string name;
         int nt;
         int nc;
-        while(infile>>name){
-            cout << "name:"<< name;
-            infile>>nt>>nc;
-            if (name == usr_name){
+        while (infile >> name) {
+            cout << "name:" << name;
+            infile >> nt >> nc;
+            if (name == usr_name) {
                 cout << "welcome back, " << usr_name
                      << "\n Your current score is " << nc
-                     << " out of " <<nt<<"\n Good Luck!\n";
+                     << " out of " << nt << "\n Good Luck!\n";
                 num_tries = nt;
-                num_cor= nc;
+                num_cor = nc;
             }
         }
     }
 }
 
-int hello_world(){
+int hello_world()
+{
     std::string first_name;
     std::string last_name;
     std::cout << "!!Please enter your first name: ";
@@ -70,12 +73,12 @@ int hello_world(){
     cout << "Hello, ";
     std::cout << first_name
               << '\t'
-              <<last_name;
+              << last_name;
     std::cout << "... and goodbye!\n";
-
 }
 
-int fib(){
+int fib()
+{
     string user_name;
     int num_tries = 0;
     int num_right = 0;
@@ -89,30 +92,30 @@ int fib(){
     const int max_tries = 3;
     const double pi = 3.14159;
 
-    while (next_seq == true){
-        while ((true)){
+    while (next_seq == true) {
+        while ((true)) {
             int usr_val;
             cin >> usr_val;
             num_tries++;
         }
         cout << "try another sequence? Y/N? ";
         cin >> usr_more;
-        if (usr_more == 'N' || usr_more == 'n'){
+        if (usr_more == 'N' || usr_more == 'n') {
             next_seq = false;
         }
     }
-
 }
 
-bool fibon_elem(int pos, int &elem){
-    if (pos <=0 || pos > 1024){
+bool fibon_elem(int pos, int& elem)
+{
+    if (pos <= 0 || pos > 1024) {
         elem = 0;
         return false;
     }
 
     elem = 1;
-    int n_2 = 1, n_1 =1;
-    for (int ix = 3;ix <= pos; ++ix){
+    int n_2 = 1, n_1 = 1;
+    for (int ix = 3; ix <= pos; ++ix) {
         elem = n_2 + n_1;
         cout << elem << endl;
         n_2 = n_1;
@@ -122,97 +125,101 @@ bool fibon_elem(int pos, int &elem){
     return true;
 }
 
-bool fibon_elem2(int pos, int &elem){
+bool fibon_elem2(int pos, int& elem)
+{
 
-    const vector<int> *pseq = fibon_seq(pos);
+    const vector<int>* pseq = fibon_seq(pos);
 
-    if (!pseq){
+    if (!pseq) {
         elem = 0;
         return false;
     }
-    elem = (*pseq)[pos-1];
+    elem = (*pseq)[pos - 1];
     return true;
 }
 
-bool print_sequence(int pos) {
-    if (pos <= 0 || pos > 1024){
+bool print_sequence(int pos)
+{
+    if (pos <= 0 || pos > 1024) {
         cerr << "invalid position: " << pos
-             <<"-- cannot handle request!\n";
+             << "-- cannot handle request!\n";
         return false;
     }
     cout << "The Fibonacci Sequence for "
          << pos << "positions: \n\t";
-    switch  (pos){
-        default:
-        case 2:
-            cout << "1 ";
-        case 1:
-            cout << "1 ";
-            break;
+    switch (pos) {
+    default:
+    case 2:
+        cout << "1 ";
+    case 1:
+        cout << "1 ";
+        break;
     }
 
     int elem;
-    int n_2 = 1,n_1 = 1;
-    for (int ix=3; ix <= pos; ++ix){
+    int n_2 = 1, n_1 = 1;
+    for (int ix = 3; ix <= pos; ++ix) {
         elem = n_2 + n_1;
         n_2 = n_1;
         n_1 = elem;
-        cout << elem << (!(ix%10)? "\n\t":" ");
+        cout << elem << (!(ix % 10) ? "\n\t" : " ");
     }
     cout << endl;
     return true;
 }
 
+void use_fibon()
+{
 
-void use_fibon(){
-
-    while (true){
+    while (true) {
         int pos = 0;
         cout << "please enter a position:";
         cin >> pos;
-        if (pos == 0){
+        if (pos == 0) {
             break;
         }
 
         int elem;
-//    if (fibon_elem2(pos, elem)){
-        if (fibon_elem2(pos, elem)){
+        //    if (fibon_elem2(pos, elem)){
+        if (fibon_elem2(pos, elem)) {
             cout << "element # " << pos
                  << " is " << elem << endl;
             print_sequence(pos);
-        }else {
+        } else {
             cout << "Sorry. Could not calculate element # "
                  << pos << endl;
         }
-
     }
 }
 
-void display(vector<int> vec){
-    for (int ix = 0; ix  < vec.size(); ++ix){
-        cout << vec[ix]<<' ';
+void display(vector<int> vec)
+{
+    for (int ix = 0; ix < vec.size(); ++ix) {
+        cout << vec[ix] << ' ';
     }
     cout << endl;
 }
 
-void swap (int &val1, int &val2){
+void swap(int& val1, int& val2)
+{
     int temp = val1;
     val1 = val2;
     val2 = temp;
 }
 
-void bubble_sort(vector<int> &vec)
+void bubble_sort(vector<int>& vec)
 {
-    for (int ix = 0;ix < vec.size(); ++ix)
-        for(int jx = ix+ 1; jx < vec.size(); ++jx)
-            if(vec[ix] > vec[jx])
+    for (int ix = 0; ix < vec.size(); ++ix)
+        for (int jx = ix + 1; jx < vec.size(); ++jx)
+            if (vec[ix] > vec[jx])
                 swap(vec[ix], vec[jx]);
 }
 
-int test_bubble(){
-    int ia[8] = {8, 34, 3, 13, 1, 21, 5, 2};
+int test_bubble()
+{
+    int ia[8] = { 8, 34, 3, 13, 1, 21, 5, 2 };
     vector<int> vec(ia, ia + 8);
-    vector<int> vec2(ia, ia+8);
+    vector<int> vec2(ia, ia + 8);
     cout << "vector before sort: ";
     display(vec);
     bubble_sort(vec);
@@ -220,9 +227,10 @@ int test_bubble(){
     display(vec);
 }
 
-inline bool is_size_ok(int size){
+inline bool is_size_ok(int size)
+{
     const int max_size = 1024;
-    if (size <= 0 || size > max_size){
+    if (size <= 0 || size > max_size) {
         cerr << "Oops: requested size is not supported : "
              << size << " --can't fulfill request.\n";
         return false;
@@ -230,53 +238,57 @@ inline bool is_size_ok(int size){
     return true;
 }
 
-const vector<int>* fibon_seq(int size){
-    const int max_size =1024;
+const vector<int>* fibon_seq(int size)
+{
+    const int max_size = 1024;
     static vector<int> elems;
     if (!is_size_ok(size))
         return 0;
 
-    for (int ix=elems.size(); ix<size; ++ix){
-        if(ix==0 || ix==1)
+    for (int ix = elems.size(); ix < size; ++ix) {
+        if (ix == 0 || ix == 1)
             elems.push_back(1);
         else
-            elems.push_back(elems[ix-1] + elems[ix-2]);
+            elems.push_back(elems[ix - 1] + elems[ix - 2]);
     }
     return &elems;
 }
 
-template <typename elemType> void display_message(const string &msg, const vector<elemType> &vec){
+template <typename elemType>
+void display_message(const string& msg, const vector<elemType>& vec)
+{
     cout << msg;
-    for(int ix=0; ix< vec.size(); ++ix){
-        elemType t =vec[ix];
-        cout<<t<<'a';
+    for (int ix = 0; ix < vec.size(); ++ix) {
+        elemType t = vec[ix];
+        cout << t << 'a';
     }
 }
 
-int test_string(){
-     std::string lang = "";
-     if(lang.empty()){
+int test_string()
+{
+    std::string lang = "";
+    if (lang.empty()) {
 
-         std::cout<<"is empty()onon;"<<std::endl;
-     }else {
-         std::cout<<"is not empty();"<<std::endl;
-
-     }
-     return 0;
+        std::cout << "is empty()onon;" << std::endl;
+    } else {
+        std::cout << "is not empty();" << std::endl;
+    }
+    return 0;
 }
 
-int test_sequence(){
+int test_sequence()
+{
     char ch;
     bool more = true;
-    while (more){
-        cout<<"Enter value: ";
+    while (more) {
+        cout << "Enter value: ";
         int ival;
-        cin>>ival;
+        cin >> ival;
         bool is_elem = Triangular::is_elem(ival);
         cout << ival
-            <<(is_elem ? " is ": " is not ")
-            <<"an element in the Triangular series.\n"
-            <<" Another value?(y/n)";
+             << (is_elem ? " is " : " is not ")
+             << "an element in the Triangular series.\n"
+             << " Another value?(y/n)";
         cin >> ch;
         if (ch == 'n' || ch == 'N')
             more = false;
@@ -307,9 +319,6 @@ int test_sequence(){
 
 //                         }
 
-
-
-
 int test_stack()
 {
     Stack st = Stack();
@@ -319,63 +328,64 @@ int test_stack()
     st.push("789");
     st.push("001");
     st.push("001");
-    cout<<st.size()<<"@@@";
+    cout << st.size() << "@@@";
     bool b = st.find("001");
-    cout<<b<<"###";
+    cout << b << "###";
     int c = st.count("001");
-    cout<<c<<";;;";
-
+    cout << c << ";;;";
 }
 
-
-#include<vector>
+#include <vector>
 
 using namespace std;
 // @lc code=start
 class Solution {
 public:
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+    {
         vector<int> nums;
         int i = 0;
         int j = 0;
         int l1 = nums1.size();
         int l2 = nums2.size();
-        while (i < l1 || j < l2){
-            if (i>=l1){
+        while (i < l1 || j < l2) {
+            if (i >= l1) {
                 nums.push_back(nums2[j]);
                 j++;
                 continue;
             }
-            if (j>=l2){
+            if (j >= l2) {
                 nums.push_back(nums1[i]);
                 i++;
                 continue;
             }
-            if (nums1[i]<=nums2[j]){
+            if (nums1[i] <= nums2[j]) {
                 nums.push_back(nums1[i]);
                 i++;
                 continue;
             }
-            if (nums2[j]<=nums1[i]){
+            if (nums2[j] <= nums1[i]) {
                 nums.push_back(nums2[j]);
                 j++;
                 continue;
             }
         }
         int lenght = nums.size();
-        int mid = lenght/2;
-        int mod = lenght%2;
-        std::cout<<"lenght"<<lenght<<std::endl<<"mid:"<<mid<<std::endl;
-        if (mod==0){
-            double result = (double)(nums[mid-1]+nums[mid])/2;
+        int mid = lenght / 2;
+        int mod = lenght % 2;
+        std::cout << "lenght" << lenght << std::endl
+                  << "mid:" << mid << std::endl;
+        if (mod == 0) {
+            double result = (double)(nums[mid - 1] + nums[mid]) / 2;
             return result;
-        }else{
+        } else {
             return (double)nums[mid];
         }
     }
 };
 
-int test_leetcode(){
+int test_leetcode()
+{
     Solution s = Solution();
     vector<int> nums1;
     vector<int> nums2;
@@ -383,22 +393,23 @@ int test_leetcode(){
     nums1.push_back(3);
     // nums2.push_back(2);
     double res = s.findMedianSortedArrays(nums1, nums2);
-    std::cout<<"results:"<<res<<std::endl;
+    std::cout << "results:" << res << std::endl;
     return 0;
 }
 
-int main() {
+int main(int argc, char** argv)
+{
     std::cout << "Hello, World! CPP zhr haha" << std::endl;
-//    test_string();
-//    rfile();
-//    use_fibon();
-//    test_bubble();
-//    cout << "hello world!"<<endl;
-//    find_test();
-//    containers_test();
-//    TestPoco *tp = new TestPoco();
-//    tp->run();
-//    test_insert();
+    //    test_string();
+    //    rfile();
+    //    use_fibon();
+    //    test_bubble();
+    //    cout << "hello world!"<<endl;
+    //    find_test();
+    //    containers_test();
+    //    TestPoco *tp = new TestPoco();
+    //    tp->run();
+    //    test_insert();
     // test_filter();
     // test_m();
     // test_sequence();
@@ -420,9 +431,17 @@ int main() {
     // test_virtual_func();
     // destructor_virtual_test();
     // test_const_var();
-    // cpp_primer_test();
-    cpperimer_exer();
+    cpp_primer_test();
+    // cpperimer_exer();
+    // test_cstring();
+    // container_adaptor();
+    // cpp_map();
+    // transcode_words(argc, argv);
+    // testmap3();
+    // testset1();
+    // t_10_25();
+    // t_multi();
+    // t_text_query(argc, argv);
 
     return 0;
-
 }
