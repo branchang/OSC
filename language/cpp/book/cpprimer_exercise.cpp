@@ -158,7 +158,8 @@ void exer_4_34(){
 
     vector<string>::const_iterator sci = vs.begin();
     vector<string>::const_iterator end = vs.end();
-    char *c_a[vs.size()];
+    // char *c_a[vs.size()];
+    char *c_a[1000];
     int i = 0;
     for (;sci!=end;++sci){
         int length = (*sci).length();

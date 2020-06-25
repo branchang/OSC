@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define HAVE_STRUCT_TIMESPEC
 #include <pthread.h>
 #include <string>
 #include <iostream>

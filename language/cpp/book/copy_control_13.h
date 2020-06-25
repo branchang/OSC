@@ -77,7 +77,6 @@ private:
 	static unsigned _no;
 };
 
-unsigned Employee::_no = 0;
 
 
 class LikeValHasPtr {
@@ -99,13 +98,5 @@ private:
 	int i;
 };
 
-LikeValHasPtr& LikeValHasPtr::operator=(const LikeValHasPtr& rhs)
-{
-	auto newps = new std::string(*(rhs.ps));
-	delete ps;
-	ps = newps;
-	i = rhs.i;
-	return *this;
-}
 
 void test_copy_control();

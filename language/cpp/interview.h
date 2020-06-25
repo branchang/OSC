@@ -1,6 +1,7 @@
 
 #include<cstring>
 #include<cstdio>
+#define HAVE_STRUCT_TIMESPEC
 #include<pthread.h>
 #include<stdexcept>
 

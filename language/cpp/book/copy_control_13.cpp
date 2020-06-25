@@ -1,5 +1,16 @@
 #include "copy_control_13.h"
 
+unsigned Employee::_no = 0;
+
+LikeValHasPtr& LikeValHasPtr::operator=(const LikeValHasPtr& rhs)
+{
+	auto newps = new std::string(*(rhs.ps));
+	delete ps;
+	ps = newps;
+	i = rhs.i;
+
+	return *this;
+}
 
 int parameter_xxx(XXX p1, XXX& p2) {
 	std::cout << "paramerter" << std::endl;

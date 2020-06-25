@@ -1,4 +1,5 @@
 #include "cpprimer.h"
+#include "copy_control_13.h"
 void init_multiple_var() {
   double salary = 99999.9;
   int interval, month = 8, day = 7, year = 1955;
@@ -224,6 +225,7 @@ int cpp_primer_test() {
   // iterator_main();
   // reverse_iterator_t();
   // t_class();
-  t_screen();
+  // t_screen();
+    test_copy_control();
   return 0;
 }

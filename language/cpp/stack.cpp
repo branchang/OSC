@@ -59,4 +59,5 @@ int Stack::count(const string &elem){
 
 int Stack::test(){
     cout<<"hello world, stack.";
+    return 0;
 }

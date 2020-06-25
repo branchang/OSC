@@ -13,7 +13,8 @@ void dynamicall_mem_12_test() {
 
 	auto p6 = make_shared<vector<string>>();
 
-	auto p66(p6);
+	// q6 p6 指向相同对象，此对象有两个引用者 
+	auto q6(p6);
 
 	
 }

@@ -8,6 +8,7 @@
 #include<sstream>
 #include<string>
 #include<initializer_list>
+#include<ctime>
 
 using namespace std;
 
@@ -129,7 +130,7 @@ class Teacher
             if (0 < x && x <= 100)
                 m_age = x;
             else
-                cout<<"错误的年龄参数"<<endl;
+                cout<<"错误的年龄参数."<<endl;
         }
 
         // 构造函数Teacher()委托调用构造函数Teacher(int x)
@@ -152,7 +153,7 @@ class Teacher
 // 只有自己备课，子类也需要备课，所以设置为保护类型
     void PrepareLesson()
     {
-        cout<<"老师备课。"<<endl;
+        cout<<"老师备课."<<endl;
     }
     string m_strName = "ChenLiangqiao";
     int m_age = 0;
@@ -419,7 +420,7 @@ public:
     // 显示画面
     void Display()
     {
-          cout<<"显示器输出"<<endl;
+          cout<<"显示器输出."<<endl;
     }
 };
 

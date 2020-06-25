@@ -82,7 +82,7 @@ SingletonHungry* SingletonHungry::instance(){
 // 二维数组查找
 bool Find(int* matrix, int rows, int columns, int numbers){
     bool found = false;
-    if (matrix == nullptr or rows <=0 or columns <=0)
+    if ((matrix == nullptr) || (rows <=0) || (columns <=0))
         return false;
 
     int row =0 ;
