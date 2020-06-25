@@ -217,6 +217,21 @@ void t_screen(){
 
 }
 
+void test_auto(){
+  int i = 0;
+  const int ci = i, &cr = ci;
+  auto  k = ci, &l = i;
+  auto &m = ci, *p = &ci;
+  // ci is const int
+  // auto &n = i, *p2 = &ci;
+}
+
+void test_decltype(){
+  const int ci = 0, &cr = ci;
+  decltype(ci) x = 0;
+  decltype(cr) y = x;
+  // decltype(cr) z;
+}
 int cpp_primer_test() {
   //   reference_test();
   // generic_algorithm();
@@ -227,5 +242,6 @@ int cpp_primer_test() {
   // t_class();
   // t_screen();
     test_copy_control();
+  test_auto();
   return 0;
 }
