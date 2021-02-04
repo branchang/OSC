@@ -20,6 +20,8 @@ func StartWebServer() {
 	// push_stream
 	e.GET("/push_stream", push_stream)
 
+	e.GET("/end_stream", end_stream)
+
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
 }
