@@ -1,12 +1,13 @@
-package server 
+package server
 
 import (
-	"net/http"
+	"github.com/labstack/echo"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"net/http"
 )
 
-func StartWebServer(){
+func StartWebServer() {
 	// Echo instance
 	e := echo.New()
 
@@ -16,6 +17,8 @@ func StartWebServer(){
 
 	// Routes
 	e.GET("/", hello)
+	// push_stream
+	e.GET("/push_stream", push_stream)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
@@ -24,4 +27,13 @@ func StartWebServer(){
 // Handler
 func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello, World 123 !")
+}
+
+func push_stream(c echo.Context) error {
+	return c.String(http.StatusOK, "success, push stream.")
+}
+
+func end_stream(c echo.Context) error {
+
+	return c.String(http.StatusOK, "success, end stream.")
 }
