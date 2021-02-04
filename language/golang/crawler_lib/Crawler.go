@@ -1,4 +1,4 @@
-package main
+package crawler_lib
 
 import (
 	"bytes"
@@ -103,7 +103,7 @@ func init() {
 	fmt.Println("parse url:", url)
 }
 
-func main() {
+func Crawler() {
 	// 解析命令行
 
 	// l, h := get_web_page(url)

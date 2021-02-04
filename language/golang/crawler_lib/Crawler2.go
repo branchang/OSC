@@ -1,4 +1,4 @@
-package main
+package crawler_lib
 
 import (
 	"bytes"
@@ -40,6 +40,6 @@ func ExampleScrape() {
 	})
 }
 
-func main() {
+func Crawler2() {
 	ExampleScrape()
 }

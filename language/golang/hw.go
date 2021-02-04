@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/branchang/OSC/tree/develop/language/golang/crawler_lib"
 )
 
 var gg int
@@ -334,4 +335,6 @@ func main() {
 	t_point_array()
 	t_p_to_p()
 	t_struct()
+	crawler_lib.Crawler()
+	crawler_lib.Crawler2()
 }

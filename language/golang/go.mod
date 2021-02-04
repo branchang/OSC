@@ -11,4 +11,4 @@ require (
 	rsc.io/quote v1.5.2
 )
 
-replace github.com/branchang/OSC/tree/develop/language/golang => /Users/Bran/Code/language/golang
+replace github.com/branchang/OSC/tree/develop/language/golang => /Users/Bran/Code/github/OSC/language/golang
