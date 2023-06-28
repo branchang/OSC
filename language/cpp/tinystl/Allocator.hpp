@@ -1,5 +1,5 @@
-#ifndef _ALLOCATOR_H_
-#define _ALLOCATOR_H_
+#ifndef _ALLOCATOR_HPPP_
+#define _ALLOCATOR_HPPP_
 
 #include "Alloc.hpp"
 #include "Construct.hpp"

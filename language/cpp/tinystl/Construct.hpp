@@ -1,5 +1,5 @@
-#ifndef _CONSTRUCT_H_
-#define _CONSTRUCT_H_
+#ifndef _CONSTRUCT_HPPP_
+#define _CONSTRUCT_HPPP_
 
 #include <new>
 

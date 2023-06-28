@@ -1,5 +1,5 @@
-#ifndef _FUNCTIONAL_H_
-#define _FUNCTIONAL_H_
+#ifndef _FUNCTIONAL_HPPP_
+#define _FUNCTIONAL_HPPP_
 
 namespace TinySTL{
 	//********** [less] ****************

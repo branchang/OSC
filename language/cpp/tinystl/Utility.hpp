@@ -1,5 +1,5 @@
-#ifndef _UTILITY_H_
-#define _UTILITY_H_
+#ifndef _UTILITY_HPPP_
+#define _UTILITY_HPPP_
 
 //#include "Algorithm.h"
 

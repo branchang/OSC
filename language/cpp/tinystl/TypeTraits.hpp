@@ -1,5 +1,5 @@
-#ifndef _TYPE_TRAITS_H_
-#define _TYPE_TRAITS_H_
+#ifndef _TYPE_TRAITS_HPPP_
+#define _TYPE_TRAITS_HPPP_
 
 namespace TinySTL{
 

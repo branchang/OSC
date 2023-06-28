@@ -1,5 +1,5 @@
-#ifndef _REF_H_
-#define _REF_H_
+#ifndef _REF_HPPP_
+#define _REF_HPPP_
 
 #include <atomic>
 #include <functional>

@@ -1,5 +1,5 @@
-#ifndef _MEMORY_H_
-#define _MEMORY_H_
+#ifndef _MEMORY_HPPP_
+#define _MEMORY_HPPP_
 
 #include "Utility.hpp"
 #include "Ref.hpp"

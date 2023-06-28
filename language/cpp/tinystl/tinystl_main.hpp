@@ -5,7 +5,24 @@
 #include "Allocator.hpp"
 #include "Functional.hpp"
 
-using namespace  std;
+#include "Vector.hpp"
+
+class TTTeacher {
+public:
+    TTTeacher() {
+        name = "ZHR11111111111111111111";
+    }
+    TTTeacher(std::string n){
+        name = n;
+    }
+    ~TTTeacher(){
+        std::cout<<"TTTeacher destory"<< std::endl;
+    }
+private:
+    std::string name;
+    int age;
+};
+
 
 int tstl_case() {
     // alloc
@@ -31,6 +48,32 @@ int tstl_case() {
     std::cout << equal(x,y) <<std::endl;
     std::cout << les(x,y) <<std::endl;
 
+    // TinySTL::vector<int> vec_i(10);
+    // int jjj = int();
+    // TinySTL::vector<char> vec_c(10);
+    TinySTL::vector<TTTeacher> vec_d(10);
+    std::cout<< "sizeof TTT:"<< sizeof(TTTeacher) << std::endl;
+    // TinySTL::vector<int> vec_i(10);
+
+    // vec_i.push_back(111);
+    // vec_i.push_back(222);
+    // vec_i.push_back(322);
+    // vec_i.push_back(422);
+    // vec_i.push_back(522);
+    // vec_i.push_back(622);
+    // vec_i.push_back(722);
+    // vec_i.push_back(822);
+    // vec_i.push_back(922);
+    // vec_i.push_back(102);
+    // vec_i.push_back(112);
+
+    // std::cout<<"~~~~~~~~~~~"<<std::endl;
+    // auto b = vec_i.begin();
+    // for (; b != vec_i.end(); b++)
+    // {
+    //     std::cout<<*b<<std::endl;
+    // }
+    // std::cout<<"~~~~~~~~~~~"<<std::endl;
 
     return 0;
 }
