@@ -6,6 +6,8 @@
 #include "Functional.hpp"
 
 #include "Vector.hpp"
+#include "List.hpp"
+#include "Stack.hpp"
 
 class TTTeacher {
 public:
@@ -22,6 +24,95 @@ private:
     std::string name;
     int age;
 };
+
+template<class T>
+void print_list(TinySTL::list<T> &l)
+{
+    typename TinySTL::list<T>::iterator const_iterator = l.begin();
+    for (;const_iterator!=l.end();const_iterator++)
+    {
+        std::cout<<const_iterator.p->data<<std::endl;
+    }
+}
+
+bool compare_int(int &a, int &b)
+{
+    return a > b;
+}
+
+int use_list() {
+    std::cout << "start use list~~~~~" << std::endl;
+
+    TinySTL::list<int> l;
+    l.push_back(9999);
+    l.push_back(4999);
+    l.push_back(3999);
+    l.push_back(1999);
+
+    std::cout << l.front()<< std::endl;
+    std::cout << l.back()<< std::endl;
+    std::cout << l.size() << std::endl;
+
+    // list::l.begin();
+    // l.pop_front();
+    // l.pop_back();
+    TinySTL::list<int>::iterator const_iterator = l.begin();
+    for (;const_iterator!=l.end();)
+    {
+        std::cout<<const_iterator.p->data<<std::endl;
+        if (const_iterator.p->data == 2999) {
+            // l.erase(const_iterator);
+            // ++const_iterator;
+            l.insert(const_iterator, 3, 3000);
+        }else {
+            // ++const_iterator;
+        }
+        ++const_iterator;
+    }
+
+    std::cout << l.size() << std::endl;
+    // swap
+    TinySTL::list<int> l2;
+    l2.push_back(11);
+    l2.push_back(11);
+    l2.push_back(22);
+    l2.push_back(33);
+    l2.push_back(44);
+    l.swap(l2);
+    // merge
+    l.merge(l2);
+    l.reverse();
+    l.unique();
+    print_list(l);
+    // error
+    // l.sort(compare_int);
+    // l.sort();
+    // print_list(l2);
+    l.clear();
+    std::cout<<l.empty() << std::endl;
+    std::cout<<l2.empty() << std::endl;
+    std::cout << "end use list~~~~~" << std::endl;
+
+}
+
+void use_stack()
+{
+    std::cout << "start use stack ~~~~~" << std::endl;
+    TinySTL::stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+
+    while (!s.empty()){
+        int i = s.top();
+        s.pop();
+        std::cout << "stack node:"<< i << std::endl;
+    }
+
+    std::cout << "end use stack ~~~~~" << std::endl;
+}
+
 
 
 int tstl_case() {
@@ -74,6 +165,8 @@ int tstl_case() {
     //     std::cout<<*b<<std::endl;
     // }
     // std::cout<<"~~~~~~~~~~~"<<std::endl;
+    use_list();
+    use_stack();
 
     return 0;
 }
